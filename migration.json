@@ -1,0 +1,26 @@
+{
+  "source": "https://damil.webflow.io/",
+  "export": "damil.webflow",
+  "target": "astro",
+  "breakpoints": [1440, 1200, 991, 767, 479],
+  "needsYou": [
+    {
+      "id": "scope",
+      "question": "Which templates should be rebuilt?",
+      "recommendation": "The current homepage only. Leave old-home, the empty project and experience templates, the Relume style guide, the password page, and the animation test out of the Astro site.",
+      "why": "The live site is one page. The other HTML files are a previous design, empty CMS shells, or internal pages, and they are not linked from the homepage."
+    },
+    {
+      "id": "content",
+      "question": "Where should the homepage copy and cards live?",
+      "recommendation": "A data file in this repo. No CMS. The old Webflow collections exported with zero items, so there is nothing to reconnect.",
+      "why": "The current page is one authored homepage: 5 projects, 5 services, 4 steps, 2 testimonials, 5 FAQs."
+    },
+    {
+      "id": "booking",
+      "question": "Where should “Book a 20-min call” and “View project” go?",
+      "recommendation": "Point both hero buttons at the same mailto as the footer (damiljamil63@gmail.com, subject “Potential Lead”). Leave “View project” as a non-link until there is a real URL per project.",
+      "why": "The hero buttons and every project link are href=\"#\". The only real destination in the export is the footer mailto, plus LinkedIn, GitHub, and X."
+    }
+  ]
+}

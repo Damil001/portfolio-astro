@@ -1,0 +1,265 @@
+---
+import Base from "../layouts/Base.astro";
+import "../styles/home.css";
+import {
+  bookingHref,
+  faqs,
+  hero,
+  intro,
+  projects,
+  services,
+  socials,
+  steps,
+  testimonials,
+} from "../data/home";
+import { developmentLogos, socialMarks } from "../data/marks";
+
+function markCopy(svg: string, copy: number) {
+  const suffix = `-${copy}`;
+  return svg
+    .replace(/id="([^"]+)"/g, (_, id) => `id="${id}${suffix}"`)
+    .replace(/url\(#([^)]+)\)/g, (_, id) => `url(#${id}${suffix})`);
+}
+---
+
+<Base title="Home">
+  <header class="nav">
+    <a class="nav-mark" href="#top">Damil.</a>
+    <nav id="site-nav" class="nav-links" aria-label="Page">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#faq">FAQs</a>
+      <a class="button nav-menu-cta" href={bookingHref} data-calendly>Book a 20-min call</a>
+    </nav>
+    <a class="button nav-cta" href={bookingHref} data-calendly>Book a 20-min call</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Menu</span>
+    </button>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-pattern"></div>
+      <div class="hero-bg"><img src="/images/Group-3-1.svg" alt="" /></div>
+      <div class="hero-fade"></div>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-header">
+            <h1>{hero.titleLead}<br />{hero.titleTail}</h1>
+            <p class="hero-copy">{hero.copy}</p>
+          </div>
+          <div class="actions">
+            <a class="button" href={bookingHref} data-calendly>Book a 20-min call</a>
+            <a class="button is-secondary" href="#projects">See the work</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="about">
+      <div class="column">
+        <div class="band-pad stack">
+          {intro.map((paragraph) => <h2>{paragraph}</h2>)}
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="projects">
+      <div class="column">
+        <div class="band-pad">
+          <h2 class="center">Recent Projects</h2>
+          <div class="projects">
+            <div class="project-column">
+              {projects.first.map((project) => (
+                <article class="project-card">
+                  <img src={project.image} alt="" class={project.cover ? "is-cover" : undefined} />
+                  <div class="project-meta">
+                    <h3 class="h5">{project.name}</h3>
+                    <a class="button" href={project.href} target="_blank" rel="noreferrer">View project</a>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <div class="project-column is-offset">
+              {projects.second.map((project) => (
+                <article class="project-card">
+                  <img src={project.image} alt="" class={project.cover ? "is-cover" : undefined} />
+                  <div class="project-meta">
+                    <h3 class="h5">{project.name}</h3>
+                    <a class="button" href={project.href} target="_blank" rel="noreferrer">View project</a>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="services">
+      <div class="column">
+        <div class="band-pad">
+          <h2 class="center">Services</h2>
+          <div class="services">
+            {services.map((service) => (
+              <article class="service">
+                <div class:list={["service-visual", { "is-product": service.logos }]}>
+                  {service.logos ? (
+                    <div class="service-card-marquee">
+                      {[0, 1, 2].map((track) => (
+                        <div class="service-card-marquee-row">
+                          <div class:list={["service-card-marquee-track", { "is-reverse": track === 1 }]}>
+                            {[0, 1].map((set) => (
+                              <div class="service-card-marquee-set" aria-hidden={set === 1 ? "true" : undefined}>
+                                {developmentLogos.map((svg, index) => (
+                                  <div class="service-card-marquee-card">
+                                    <div class="service-card-marquee-embed">
+                                      <Fragment set:html={markCopy(svg, track * 20 + set * 10 + index)} />
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <img src={service.image} alt="" />
+                  )}
+                </div>
+                <div class="service-copy">
+                  <h3 class="h4">{service.title}</h3>
+                  <p class="body">{service.copy}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="column">
+        <div class="band-pad">
+          <h2 class="center">How it works</h2>
+          <div class="timeline">
+            <div class="steps">
+              {steps.map((step) => (
+                <article class="step">
+                  <div class="step-top">
+                    <span class="step-line"></span>
+                    <span class="step-num">{step.n}</span>
+                    <span class="step-line"></span>
+                  </div>
+                  <div class="step-copy">
+                    <h3 class="h4">{step.title}</h3>
+                    <p class="body">{step.copy}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="testimonials">
+      <div class="column">
+        <div class="band-pad">
+          <h2 class="center">Testimonials</h2>
+          <div class="quotes">
+            {testimonials.map((item) => (
+              <article class="quote">
+                <div class="quote-inner">
+                  <p class="large">{item.quote}</p>
+                  <div class="person">
+                    <img src={item.image} alt="" />
+                    <div>
+                      <p>{item.name}</p>
+                      <p class="company">{item.company}</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="faq">
+      <div class="column">
+        <div class="band-pad">
+          <h2 class="center">FAQs</h2>
+          <div class="faq-list">
+            {faqs.map((item) => (
+              <details class="faq">
+                <summary>{item.q}</summary>
+                <p class="body">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="hero-pattern"></div>
+    <div class="hero-bg"><img src="/images/Group-3-1.svg" alt="" /></div>
+    <div class="hero-fade is-footer"></div>
+    <div class="band footer-inner">
+      <div class="column">
+        <div class="band-pad footer-stack">
+          <h2>Convinced we are a good fit</h2>
+          <p class="body footer-copy">If there's a project on your mind or you just fancy a chat, don't hesitate to connect with me via the email provided.</p>
+          <div class="actions">
+            <a class="button" href={bookingHref} data-calendly>Book a 20-min call</a>
+          </div>
+          <div class="socials">
+            <p>Socials</p>
+            <div class="social-row">
+              {socials.map((social, index) => (
+                <a href={social.href} target="_blank" rel="noreferrer" aria-label={social.label}>
+                  <Fragment set:html={socialMarks[index]} />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
+  <script is:inline src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script>
+    import { startReveals } from "../scripts/reveal";
+    startReveals();
+
+    type CalendlyApi = { initPopupWidget: (options: { url: string }) => void };
+    document.querySelectorAll<HTMLAnchorElement>("a[data-calendly]").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const calendly = (window as Window & { Calendly?: CalendlyApi }).Calendly;
+        if (!calendly) return;
+        event.preventDefault();
+        calendly.initPopupWidget({ url: link.href });
+      });
+    });
+
+    const toggle = document.querySelector<HTMLButtonElement>(".nav-toggle");
+    const menu = document.querySelector<HTMLElement>("#site-nav");
+    if (toggle && menu) {
+      const setOpen = (open: boolean) => {
+        toggle.setAttribute("aria-expanded", String(open));
+        menu.classList.toggle("is-open", open);
+      };
+      toggle.addEventListener("click", () => setOpen(toggle.getAttribute("aria-expanded") !== "true"));
+      menu.addEventListener("click", (event) => {
+        if ((event.target as Element).closest("a")) setOpen(false);
+      });
+    }
+  </script>
+</Base>

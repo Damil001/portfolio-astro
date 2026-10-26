@@ -1,0 +1,34 @@
+<svg width="29" height="70" viewBox="0 0 29 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <g filter="url(#filter0_iii_2092_398)">
+                                <rect width="70" height="70" rx="8" fill="white"></rect>
+                                <rect x="0.5" y="0.5" width="69" height="69" rx="7.5" stroke="url(#paint0_linear_2092_398)"></rect>
+                                <path d="M35 15.875C25.1169 15.875 17.375 20.3225 17.375 26V44C17.375 49.6775 25.1169 54.125 35 54.125C44.8831 54.125 52.625 49.6775 52.625 44V26C52.625 20.3225 44.8831 15.875 35 15.875ZM35 18.125C43.3344 18.125 50.375 21.7306 50.375 26C50.375 30.2694 43.3344 33.875 35 33.875C26.6656 33.875 19.625 30.2694 19.625 26C19.625 21.7306 26.6656 18.125 35 18.125ZM50.375 44C50.375 48.2694 43.3344 51.875 35 51.875C26.6656 51.875 19.625 48.2694 19.625 44V40.0231C22.625 43.0925 28.3194 45.125 35 45.125C41.6806 45.125 47.375 43.0925 50.375 40.0231V44ZM50.375 35C50.375 39.2694 43.3344 42.875 35 42.875C26.6656 42.875 19.625 39.2694 19.625 35V31.0231C22.625 34.0925 28.3194 36.125 35 36.125C41.6806 36.125 47.375 34.0925 50.375 31.0231V35Z" fill="black"></path>
+                              </g>
+                              <defs>
+                                <filter id="filter0_iii_2092_398" x="0" y="0" width="70" height="76" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                  <feflood flood-opacity="0" result="BackgroundImageFix">
+                                  <feblend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape">
+                                  <fecolormatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha">
+                                  <feoffset dy="6">
+                                  <fegaussianblur stddeviation="10">
+                                  <fecomposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1">
+                                  <fecolormatrix type="matrix" values="0 0 0 0 0.0431373 0 0 0 0 0.309804 0 0 0 0 0.360784 0 0 0 0.06 0">
+                                  <feblend mode="normal" in2="shape" result="effect1_innerShadow_2092_398">
+                                  <fecolormatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha">
+                                  <feoffset dy="1">
+                                  <fegaussianblur stddeviation="1">
+                                  <fecomposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1">
+                                  <fecolormatrix type="matrix" values="0 0 0 0 0.0431373 0 0 0 0 0.309804 0 0 0 0 0.360784 0 0 0 0.08 0">
+                                  <feblend mode="normal" in2="effect1_innerShadow_2092_398" result="effect2_innerShadow_2092_398">
+                                  <fecolormatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha">
+                                  <feoffset dy="-1">
+                                  <fecomposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1">
+                                  <fecolormatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.8 0">
+                                  <feblend mode="normal" in2="effect2_innerShadow_2092_398" result="effect3_innerShadow_2092_398">
+                                </feblend></fecolormatrix></fecomposite></feoffset></fecolormatrix></feblend></fecolormatrix></fecomposite></fegaussianblur></feoffset></fecolormatrix></feblend></fecolormatrix></fecomposite></fegaussianblur></feoffset></fecolormatrix></feblend></feflood></filter>
+                                <lineargradient id="paint0_linear_2092_398" x1="5.42237e-07" y1="11.3574" x2="70" y2="58.6426" gradientunits="userSpaceOnUse">
+                                  <stop stop-color="white"></stop>
+                                  <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+                                </lineargradient>
+                              </defs>
+                            </svg>

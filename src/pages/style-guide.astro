@@ -1,0 +1,171 @@
+---
+import Base from "../layouts/Base.astro";
+
+const colours = [
+  ["Ink", "--color-ink", "Headings"],
+  ["Text", "--color-text", "Body copy, FAQ, secondary button label"],
+  ["Text on dark", "--color-text-on-dark", "Primary button label"],
+  ["Page", "--color-page", "Page background"],
+  ["Reset", "--color-reset", "Unset body text from the Webflow reset. Designed copy does not use it."],
+  ["Focus", "--color-focus", "Keyboard focus ring"],
+  ["Orange", "--color-orange", "Declared on :root. Unused by the current page."],
+  ["Green", "--color-green", "Old homepage only."],
+  ["Button top", "--color-button-top", "Primary button gradient start"],
+  ["Button bottom", "--color-button-bottom", "Primary button gradient end"],
+  ["Button border", "--color-button-border", "Primary button, sides and top"],
+  ["Secondary top", "--color-button-secondary-top", "Secondary button gradient start"],
+  ["Secondary bottom", "--color-button-secondary-bottom", "Secondary button gradient end"],
+  ["Glass", "--color-glass", "Testimonial inner and timeline panel"],
+  ["Glass border", "--color-glass-border", "Testimonial inner border"],
+];
+
+const type = [
+  ["H1", "var(--font-display)", "var(--text-h1)", "700", "var(--leading-h1)", "var(--tracking-h1)", "Your marketing & engineering partner"],
+  ["H2", "var(--font-display)", "var(--text-h2)", "700", "var(--leading-h2)", "var(--tracking-h2)", "Recent Projects"],
+  ["H4", "var(--font-display)", "var(--text-h4)", "700", "var(--leading-h4)", "var(--tracking-h4)", "Product & UI/UX design"],
+  ["H5", "var(--font-display)", "var(--text-h5)", "700", "var(--leading-h5)", "normal", "Attentive"],
+  ["Body", "var(--font-body)", "var(--text-body)", "400", "var(--leading-body)", "normal", "Design, SEO and development in one place."],
+  ["Large", "var(--font-body)", "var(--text-large)", "400", "var(--leading-large)", "var(--tracking-large)", "Testimonial quote"],
+  ["FAQ", "var(--font-display)", "var(--text-faq)", "700", "var(--leading-faq)", "normal", "How quickly can I expect my website to be live?"],
+  ["Button", "var(--font-body)", "var(--text-button)", "400", "var(--leading-button)", "var(--tracking-button)", "Book a 20-min call"],
+];
+
+const spaces = [
+  ["xxs", "--space-xxs"],
+  ["xs", "--space-xs"],
+  ["sm", "--space-sm"],
+  ["md", "--space-md"],
+  ["lg", "--space-lg"],
+  ["xl", "--space-xl"],
+  ["xxl", "--space-xxl"],
+  ["section", "--space-section"],
+];
+---
+
+<Base title="Style guide">
+  <main class="guide">
+    <h1>Style guide</h1>
+    <p class="lede">Tokens measured from the Webflow homepage. Resize the window: type and section spacing follow the site’s breakpoints at 991px and 767px.</p>
+
+    <section>
+      <h2>Colour</h2>
+      <ul class="swatches">
+        {colours.map(([name, token, role]) => (
+          <li>
+            <span class="chip" style={`background: var(${token})`}></span>
+            <span>
+              <strong>{name}</strong>
+              <code>{token}</code>
+              <span class="role">{role}</span>
+            </span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section>
+      <h2>Type</h2>
+      <ul class="type">
+        {type.map(([name, family, size, weight, leading, tracking, sample]) => (
+          <li>
+            <p style={`font-family:${family};font-size:${size};font-weight:${weight};line-height:${leading};letter-spacing:${tracking};color:var(--color-ink);margin:0`}>
+              {sample}
+            </p>
+            <code>{name} · {size} / {leading} · {weight} · tracking {tracking}</code>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section>
+      <h2>Spacing</h2>
+      <p>Section padding is 6rem, 5rem below 992px, and 3.5rem below 768px. Page gutter is 5%. Content column maxes at 80rem.</p>
+      <ul class="spaces">
+        {spaces.map(([name, token]) => (
+          <li>
+            <span class="bar" style={`width: var(${token})`}></span>
+            <code>{name} {token}</code>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section>
+      <h2>Radii</h2>
+      <div class="radii">
+        <div class="radius" style="border-radius: var(--radius-card)">card 0.25rem</div>
+        <div class="radius" style="border-radius: var(--radius-control)">control 0.5rem</div>
+        <div class="radius" style="border-radius: var(--radius-panel)">panel 1.25rem</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Buttons</h2>
+      <div class="buttons">
+        <a class="button" href="#buttons">Book a 20-min call</a>
+        <a class="button is-secondary" href="#buttons">See the work</a>
+      </div>
+      <p>No box-shadow on homepage components. Primary button has a 1px #525252 border on the top and sides, and no bottom border. Secondary border is #fafafa, same shape.</p>
+    </section>
+  </main>
+</Base>
+
+<style>
+  .guide {
+    width: min(100% - 2 * var(--gutter), var(--container));
+    margin-inline: auto;
+    padding-block: var(--space-section);
+  }
+
+  h1, h2 {
+    font-family: var(--font-display);
+    color: var(--color-ink);
+    letter-spacing: -2px;
+    line-height: 1.1;
+  }
+
+  h1 { font-size: var(--text-h1); font-weight: 700; margin: 0 0 var(--space-sm); }
+  h2 { font-size: var(--text-h4); font-weight: 700; margin: var(--space-xl) 0 var(--space-sm); }
+  p, code, .role { font-family: var(--font-body); }
+  .lede, p { color: var(--color-text); font-size: var(--text-body); line-height: var(--leading-body); max-width: 40rem; }
+  code { display: block; color: var(--color-reset); font-size: 0.875rem; }
+
+  .swatches, .type, .spaces { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-sm); }
+  .swatches li, .type li, .spaces li { display: flex; gap: var(--space-sm); align-items: center; }
+  .chip { width: 3rem; height: 3rem; border-radius: var(--radius-control); border: 1px solid var(--color-ink); flex: none; }
+  .role { display: block; }
+
+  .bar { display: block; height: 0.75rem; background: var(--color-ink); flex: none; }
+  .radii, .buttons { display: flex; flex-wrap: wrap; gap: var(--gap-buttons); }
+  .radius {
+    width: 8rem;
+    height: 5rem;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+  }
+
+  .button {
+    color: var(--color-text-on-dark);
+    letter-spacing: var(--tracking-button);
+    background-image: var(--gradient-button);
+    border: 1px solid var(--color-button-border);
+    border-bottom-style: none;
+    border-radius: var(--radius-control);
+    padding: 0.875rem 1rem;
+    font-family: var(--font-body);
+    font-size: var(--text-button);
+    font-weight: 400;
+    line-height: var(--leading-button);
+  }
+
+  .button.is-secondary {
+    color: var(--color-text);
+    background-color: transparent;
+    background-image: var(--gradient-button-secondary);
+    border-style: solid solid none;
+    border-color: var(--color-button-secondary-border);
+  }
+</style>

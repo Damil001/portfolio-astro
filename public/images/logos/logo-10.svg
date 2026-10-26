@@ -1,0 +1,39 @@
+<svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <g filter="url(#filter0_iii_2093_390)">
+                                <rect width="70" height="70" rx="8" fill="white"></rect>
+                                <rect x="0.5" y="0.5" width="69" height="69" rx="7.5" stroke="url(#paint0_linear_2093_390)"></rect>
+                                <g clip-path="url(#clip0_2093_390)">
+                                  <path d="M11 35C11 21.7452 21.7452 11 35 11C48.2547 11 59 21.7452 59 35C59 43.2784 54.8086 50.5779 48.432 54.8922L26.702 24.4701C26.2977 23.9042 25.5741 23.6642 24.9117 23.8764C24.2493 24.0887 23.8 24.7046 23.8 25.4001V49.4H27V30.3929L45.6557 56.5107C42.4452 58.1043 38.8272 59 35 59C21.7452 59 11 48.2547 11 35ZM43 43V23.8H46.2V43H43Z" fill-rule="evenodd" clip-rule="evenodd" fill="black"></path>
+                                </g>
+                              </g>
+                              <defs>
+                                <filter id="filter0_iii_2093_390" x="0" y="0" width="70" height="76" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                  <feflood flood-opacity="0" result="BackgroundImageFix">
+                                  <feblend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape">
+                                  <fecolormatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha">
+                                  <feoffset dy="6">
+                                  <fegaussianblur stddeviation="10">
+                                  <fecomposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1">
+                                  <fecolormatrix type="matrix" values="0 0 0 0 0.0431373 0 0 0 0 0.309804 0 0 0 0 0.360784 0 0 0 0.06 0">
+                                  <feblend mode="normal" in2="shape" result="effect1_innerShadow_2093_390">
+                                  <fecolormatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha">
+                                  <feoffset dy="1">
+                                  <fegaussianblur stddeviation="1">
+                                  <fecomposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1">
+                                  <fecolormatrix type="matrix" values="0 0 0 0 0.0431373 0 0 0 0 0.309804 0 0 0 0 0.360784 0 0 0 0.08 0">
+                                  <feblend mode="normal" in2="effect1_innerShadow_2093_390" result="effect2_innerShadow_2093_390">
+                                  <fecolormatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha">
+                                  <feoffset dy="-1">
+                                  <fecomposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1">
+                                  <fecolormatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.8 0">
+                                  <feblend mode="normal" in2="effect2_innerShadow_2093_390" result="effect3_innerShadow_2093_390">
+                                </feblend></fecolormatrix></fecomposite></feoffset></fecolormatrix></feblend></fecolormatrix></fecomposite></fegaussianblur></feoffset></fecolormatrix></feblend></fecolormatrix></fecomposite></fegaussianblur></feoffset></fecolormatrix></feblend></feflood></filter>
+                                <lineargradient id="paint0_linear_2093_390" x1="5.42237e-07" y1="11.3574" x2="70" y2="58.6426" gradientunits="userSpaceOnUse">
+                                  <stop stop-color="white"></stop>
+                                  <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+                                </lineargradient>
+                                <clippath id="clip0_2093_390">
+                                  <rect width="48" height="48" fill="white" transform="translate(11 11)"></rect>
+                                </clippath>
+                              </defs>
+                            </svg>
